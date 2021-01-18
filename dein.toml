@@ -99,3 +99,5 @@ let g:rustfmt_autosave = 0
 '''
 on_ft = ['rust']
 
+[[plugins]]
+repo = 'tpope/vim-surround'
