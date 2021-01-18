@@ -70,11 +70,11 @@ autocmd VimEnter * execute 'Defx'
 nnoremap <silent> <Leader>f :<C-u> Defx <CR>
 
 call defx#custom#option('_', {
-      \ 'winwidth': 40,
+      \ 'winwidth': 30,
       \ 'split': 'vertical',
       \ 'direction': 'topleft',
       \ 'show_ignored_files': 1,
-      \ 'buffer_name': 'exlorer',
+      \ 'buffer_name': 'explorer',
       \ 'toggle': 1,
       \ 'resume': 1,
       \ 'columns': 'indent:git:icons:filename:mark',
