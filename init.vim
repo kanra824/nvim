@@ -36,8 +36,10 @@ nnoremap ss :<C-u>sp<CR><C-w>j
 nnoremap sv :<C-u>vs<CR><C-w>l
 nnoremap j gj
 nnoremap k gk
+nnoremap gl $
+nnoremap gh 0
 
 runtime init/coc.init.vim
 runtime init/defx.init.vim
 runtime init/denite.init.vim
-
+runtime init/ale.init.vim
