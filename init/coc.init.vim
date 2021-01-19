@@ -6,10 +6,10 @@ set nobackup
 set nowritebackup
 
 " Better display for messages
-set cmdheight=2
+" set cmdheight=2
 
 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
+set updatetime=200
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -101,6 +101,7 @@ xmap <silent> <C-D> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
+nmap gf :Format<CR>
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)

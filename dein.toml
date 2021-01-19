@@ -1,66 +1,56 @@
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
-
+# filer
 [[plugins]]
 repo = 'Shougo/defx.nvim'
 
+# icon
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
+# icon
 [[plugins]]
 repo = 'kristijanhusak/defx-icons'
 
+# display git status on defx
 [[plugins]]
 repo = 'kristijanhusak/defx-git'
 
+# file search
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'Shougo/deol.nvim'
-
+# use language server
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 build = '''
   git checkout release
 '''
-hook_add = '''
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
-'''
 
 
+# gaming parentheses
 [[plugins]]
 repo = 'luochen1990/rainbow'
 hook_add = '''
   let g:rainbow_active = 1
 '''
 
+# resize window
 [[plugins]]
 repo = 'simeji/winresizer'
 
+# manipulate git
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+# display git-diff on leftside
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
+# comentout selected rows
 [[plugins]]
 repo = 'tpope/vim-commentary'
 
+# cool vim statusline
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
@@ -73,12 +63,14 @@ hook_add = '''
   let g:airline#extensions#tabline#fnamemod = ':t'
 '''
 
+# vim-airline colorscheme
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
   let g:airline_theme = 'light'
 '''
 
+# linter
 [[plugins]]
 repo = 'dense-analysis/ale'
 hook_add = '''
@@ -89,8 +81,8 @@ hook_add = '''
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 '''
 
-[[plugins]]
-repo = 'jiangmiao/auto-pairs'
+# [[plugins]]
+# repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
@@ -116,3 +108,8 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'kkiyama117/coc-toml'
+depends = 'coc.nvim'
+on_ft = 'toml'
