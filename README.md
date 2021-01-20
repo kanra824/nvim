@@ -4,5 +4,7 @@
 - cclsを入れる
 - フォントを入れる(https://github.com/ryanoasis/nerd-fonts/releases)
 - https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim
+- pip install neovim
+- pacman -S neovim
 - これをclone
 
