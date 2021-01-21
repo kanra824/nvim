@@ -7,5 +7,7 @@
 - vim-plugのインストール
 - pip install neovim
 - pacman -S neovim
+- ~/.vim/plugged 作成
+- sudo nvimして:Plug Install
 - これをclone
 
