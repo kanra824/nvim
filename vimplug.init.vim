@@ -58,7 +58,7 @@ Plug 'vim-airline/vim-airline-themes'
 " linter
 Plug 'dense-analysis/ale'
 
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'rust-lang/rust.vim'
 let g:rustfmt_autosave = 0
@@ -82,7 +82,10 @@ Plug 'kkiyama117/coc-toml'
 Plug 'wadackel/vim-dogrun'
 
 " Rust
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
+
+" zen-mode
+Plug 'junegunn/goyo.vim'
 
 
 call plug#end()

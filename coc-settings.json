@@ -20,4 +20,5 @@
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",
+	"typescript.format.enabled": true,
 }
