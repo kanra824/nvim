@@ -1,6 +1,4 @@
-runtime dein.init.vim
-
-syntax on
+runtime vimplug.init.vim
 
 set encoding=utf-8
 set number
@@ -21,11 +19,14 @@ set hlsearch
 set autochdir
 set title
 
-hi NormalFloat guifg=#2e3440 guibg=#a3be8c
-hi Pmenu cterm=underline ctermfg=250 ctermbg=235 gui=underline guifg=#bcbcbc guibg=#262626
-hi PmenuSel cterm=underline ctermfg=250 ctermbg=131 gui=underline guifg=#bcbcbc guibg=#af5f5f
-hi CocErrorSign ctermfg=15 ctermbg=9
-hi CocWarningSign ctermfg=11 ctermbg=0
+" hi NormalFloat guifg=#2e3440 guibg=#a3be8c
+" hi Pmenu cterm=underline ctermfg=250 ctermbg=235 gui=underline guifg=#bcbcbc guibg=#262626
+" hi PmenuSel cterm=underline ctermfg=250 ctermbg=131 gui=underline guifg=#bcbcbc guibg=#af5f5f
+" hi CocErrorSign ctermfg=15 ctermbg=9
+" hi CocWarningSign ctermfg=11 ctermbg=0
+
+syntax on
+set termguicolors
 
 noremap <C-t> :terminal<CR>
 nnoremap sj <C-w>j
