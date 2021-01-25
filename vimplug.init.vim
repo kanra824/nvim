@@ -75,10 +75,14 @@ Plug 'previm/previm'
 
 Plug 'tyru/open-browser.vim'
 
+" toml
 Plug 'kkiyama117/coc-toml'
 
+" colorscheme
 Plug 'wadackel/vim-dogrun'
 
+" Rust
+Plug 'rust-lang/rust.vim'
 
 
 call plug#end()

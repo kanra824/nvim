@@ -26,6 +26,7 @@ set title
 " hi CocWarningSign ctermfg=11 ctermbg=0
 
 syntax on
+filetype plugin indent on
 set termguicolors
 
 noremap <C-t> :terminal<CR>
