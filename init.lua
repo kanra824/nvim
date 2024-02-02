@@ -6,5 +6,9 @@ require("options")
 require("init_lazy")
 require("keymap")
 
--- vim.cmd[[colorscheme tokyonight-night]]
+-- colorscheme
+-- vim.cmd[[colorscheme catppuccin]]
+require('monokai').setup { italics = false, palette = require('monokai').pro }
+
+-- vim.api.nvim_set_hl(0, 'NormalFloat', {bg='#425e57'})
 

@@ -46,3 +46,24 @@ keymap.set('n', '<space>ren', '<Plug>(coc-rename)', {silent = true})
 --スペースfmtでFormat
 -- nmap <silent> <space>fmt <Plug>(coc-format)
 keymap.set('n', '<space>fmt', '<Plug>(coc-format)', {silent = true})
+
+---
+--- telescope config
+---
+-- find_files
+keymap.set('n', '<space>f', ':Telescope find_files<cr>', {noremap = true, silent = true})
+-- live_grep
+keymap.set('n', '<space>g', ':Telescope live_grep<cr>', {noremap = true, silent = true})
+
+--
+-- buffer line
+--
+function close_current_buffer()
+    local current_buffer_id = vim.fn.bufnr("%")
+    vim.schedule(function()
+        vim.cmd("bd " .. current_buffer_id)
+    end)
+end
+keymap.set('n', '<C-h>', ':bprev<cr>', {noremap = true, silent = true})
+keymap.set('n', '<C-l>', ':bnext<cr>', {noremap = true, silent = true})
+vim.keymap.set("n", "<C-x>", close_current_buffer)

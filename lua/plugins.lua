@@ -5,18 +5,24 @@ return {
     {
         "tanvirtin/monokai.nvim",
         config = function()
-            vim.cmd([[colorscheme monokai]])
+            require('monokai').setup { italics = false }
         end
+    },
+    {
+        "rebelot/kanagawa.nvim",
+    },
+    {
+        "folke/tokyonight.nvim",
+    },
+    {
+        "catppuccin/nvim",
     },
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        dependencies = { 'nvim-tree/nvim-web-devicons'},
         config = function()
             require('lualine').setup()
         end
-    },
-    {
-        'kyazdani42/nvim-web-devicons',
     },
     {
         'nvim-tree/nvim-tree.lua',
@@ -26,12 +32,36 @@ return {
         }
     },
     {
+    -- need node
+    -- need to do :CocInstall
         "neoclide/coc.nvim",
         branch = "release",
         config = function()
             vim.g.coc_global_extensions = {
                 "coc-rust-analyzer",
+                "coc-clangd",
             }
+        end
+    },
+    {
+    -- need ripgrep
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
+        'simeji/winresizer'
+    },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {}
+    },
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require("bufferline").setup{}
         end
     }
 }

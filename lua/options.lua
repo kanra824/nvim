@@ -31,7 +31,8 @@ local options = {
     viminfo = "", -- viminfoファイルに保存しない
 
     termguicolors = true, -- terminal color
-    pumblend = 10,
+    pumblend = 1,
+    winblend = 1,
 }
 
 for k, v in pairs(options) do
