@@ -1,10 +1,14 @@
 local options = {
-    -- エンコーディングをUTF-8に設定
     encoding = "utf-8",
     fileencoding = "utf-8",
     number = true, -- 行番号を表示
     list = true,
     title = true,
+    mouse = "a",
+    writebackup = false,
+    updatetime = 100,
+    autoread = true,
+    hidden = true,
 
     -- インデント
     shiftwidth = 4, -- シフト幅を4に設定する
@@ -16,11 +20,18 @@ local options = {
     -- 検索
     hlsearch = true, -- 検索時にハイライトを有効にする
 
-    -- クリップボード
-    clipboard = "unnamedplus",
-
     -- フォント
     guifont="Hack Nerd font",
+
+    -- no backup
+    swapfile = false, -- swapファイルを保存しない
+    undofile = false, -- undoファイルを保存しない
+    backup = false, -- backupを保存しない
+    writebackup = false, --writebackupを保存しない
+    viminfo = "", -- viminfoファイルに保存しない
+
+    termguicolors = true, -- terminal color
+    pumblend = 10,
 }
 
 for k, v in pairs(options) do

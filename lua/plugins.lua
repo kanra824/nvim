@@ -22,10 +22,16 @@ return {
         'nvim-tree/nvim-tree.lua',
         config = true,
         keys = {
-            {mode = "n", "<C-n>", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeをトグルする"},
+            {mode = "n", "<C-f>", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeをトグルする"},
         }
     },
     {
-        "neoclide/coc.nvim"
+        "neoclide/coc.nvim",
+        branch = "release",
+        config = function()
+            vim.g.coc_global_extensions = {
+                "coc-rust-analyzer",
+            }
+        end
     }
 }
