@@ -6,7 +6,8 @@ local options = {
     title = true,
     mouse = "a",
     writebackup = false,
-    updatetime = 100,
+    updatetime = 300,
+    signcolumn = "yes",
     autoread = true,
     hidden = true,
 

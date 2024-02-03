@@ -28,7 +28,7 @@ return {
         'nvim-tree/nvim-tree.lua',
         config = true,
         keys = {
-            {mode = "n", "<C-f>", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeをトグルする"},
+            {mode = "n", "gf", "<cmd>NvimTreeToggle<CR>", desc = "NvimTreeをトグルする"},
         }
     },
     {

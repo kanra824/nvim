@@ -27,6 +27,21 @@ keymap.set('t', '<ESC>', '<C-\\><C-n>', {noremap = true})
 --
 -- coc setting
 --
+local keyset = vim.keymap.set
+-- Autocomplete
+function _G.check_back_space()
+    local col = vim.fn.col('.') - 1
+    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+end
+
+local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
+-- Make <CR> to accept selected completion item or notify coc.nvim to format
+-- <C-g>u breaks current undo, please make your own choice
+keyset("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+-- keymap.set("i", "<CR>", [[coc#pum#visible() ? coc#pum#confirm() : "<CR>"]], opts)
+
 --ノーマルモードで
 --スペース2回でCocList
 -- nmap <silent> <space><space> :<C-u>CocList<cr>
@@ -46,6 +61,16 @@ keymap.set('n', '<space>ren', '<Plug>(coc-rename)', {silent = true})
 --スペースfmtでFormat
 -- nmap <silent> <space>fmt <Plug>(coc-format)
 keymap.set('n', '<space>fmt', '<Plug>(coc-format)', {silent = true})
+
+-- Remap <C-f> and <C-b> to scroll float windows/popups
+---@diagnostic disable-next-line: redefined-local
+local opts = {silent = true, nowait = true, expr = true}
+keymap.set("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1, 1) : "<C-f>"', opts)
+keymap.set("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0, 1) : "<C-b>"', opts)
+keymap.set("i", "<C-f>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1, 1)<cr>" : "<Left>"', opts)
+keymap.set("i", "<C-b>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0, 1)<cr>" : "<Right>"', opts)
+keymap.set("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1, 1) : "<C-f>"', opts)
+keymap.set("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0, 1) : "<C-b>"', opts)
 
 ---
 --- telescope config
